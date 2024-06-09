@@ -5,13 +5,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name="student")
+@Table(name="students")
 public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter
-    @Setter
     private int rollNo;
     @Column(name="student_name")
     private String name;
@@ -20,4 +18,27 @@ public class Student {
     @Column(name="student_branch")
     private String branch;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public float getPercentage() {
+        return percentage;
+    }
+
+    public void setPercentage(float percentage) {
+        this.percentage = percentage;
+    }
+
+    public String getBranch() {
+        return branch;
+    }
+
+    public void setBranch(String branch) {
+        this.branch = branch;
+    }
 }
